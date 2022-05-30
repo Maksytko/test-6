@@ -41,32 +41,36 @@ function Modal({ changeModalStatus }) {
   function handleInputChange(event) {
     const target = event.currentTarget;
 
-    if (target.name === "photo") {
-      setPhoto(URL.createObjectURL(target.files[0]));
-    }
+    switch (target.name) {
+      case "photo":
+        setPhoto(URL.createObjectURL(target.files[0]));
+        break;
 
-    if (target.name === "name") {
-      setName(target.value);
-    }
+      case "name":
+        setName(target.value);
+        break;
 
-    if (target.name === "country") {
-      setCountry(target.value);
-    }
+      case "country":
+        setCountry(target.value);
+        break;
 
-    if (target.name === "region") {
-      setRegion(target.value);
-    }
+      case "region":
+        setRegion(target.value);
+        break;
+      case "grape":
+        setGrape(target.value);
+        break;
 
-    if (target.name === "grape") {
-      setGrape(target.value);
-    }
+      case "type":
+        setType(target.value);
+        break;
 
-    if (target.name === "type") {
-      setType(target.value);
-    }
+      case "price":
+        setPrice(target.value);
+        break;
 
-    if (target.name === "price") {
-      setPrice(target.value);
+      default:
+        break;
     }
   }
 

@@ -36,20 +36,25 @@ function SignUp() {
   function handleInputChange(event) {
     const target = event.currentTarget;
 
-    if (target.name === "Name") {
-      setName(target.value);
-    }
+    switch (target.name) {
+      case "Name":
+        setName(target.value);
+        break;
 
-    if (target.name === "Email") {
-      setEmail(target.value);
-    }
+      case "Email":
+        setEmail(target.value);
+        break;
 
-    if (target.name === "Password") {
-      setPassword(target.value);
-    }
+      case "Password":
+        setPassword(target.value);
+        break;
 
-    if (target.name === "Confirm Password") {
-      setConfirmPassword(target.value);
+      case "Confirm Password":
+        setConfirmPassword(target.value);
+        break;
+
+      default:
+        break;
     }
   }
 

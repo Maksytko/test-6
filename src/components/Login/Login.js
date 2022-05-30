@@ -35,12 +35,18 @@ function Login() {
 
   function handleInputChange(event) {
     const target = event.currentTarget;
-    if (target.name === "Email") {
-      setEmail(target.value);
-    }
 
-    if (target.name === "Password") {
-      setPassword(target.value);
+    switch (target.name) {
+      case "Email":
+        setEmail(target.value);
+        break;
+
+      case "Password":
+        setPassword(target.value);
+        break;
+
+      default:
+        break;
     }
   }
 

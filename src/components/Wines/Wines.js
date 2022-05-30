@@ -27,20 +27,22 @@ function Wines({ changeModalStatus }) {
   }
 
   function handleRefreshButtonClick() {
-    dispatch(setWines(getWines()));
+    dispatch(changeSort("normal"));
   }
 
   function handleSortButtonClick() {
-    if (sort === "normal") {
-      dispatch(changeSort("from lower"));
-    }
+    switch (sort) {
+      case "from lower":
+        dispatch(changeSort("from biggest"));
+        break;
 
-    if (sort === "from lower") {
-      dispatch(changeSort("from biggest"));
-    }
+      case "from biggest":
+      case "normal":
+        dispatch(changeSort("from lower"));
+        break;
 
-    if (sort === "from biggest") {
-      dispatch(changeSort("normal"));
+      default:
+        break;
     }
   }
 
@@ -74,7 +76,7 @@ function Wines({ changeModalStatus }) {
           onClick={handleRefreshButtonClick}
           className={style.button_refresh}
         >
-          <img alt="refresh" src={refresh} style={{ width: "35px" }}></img>
+          <img alt="refresh" src={refresh} style={{ width: "35px" }} />
         </button>
         <button
           type="button"
