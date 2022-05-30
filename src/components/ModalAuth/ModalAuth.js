@@ -30,7 +30,7 @@ function ModalAuth() {
           </li>
         </ul>
         <Outlet />
-        <NavLink to="/forpass" className={style.link_pass}>
+        <NavLink to="forpass" className={style.link_pass}>
           Forgotten Password
         </NavLink>
       </div>
