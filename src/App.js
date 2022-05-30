@@ -26,6 +26,12 @@ function App() {
     }
   }, [isLogined, location.pathname, navigate]);
 
+  useEffect(() => {
+    if (!isLogined && location.pathname === "/") {
+      navigate("/auth/login", { replace: true });
+    }
+  }, [isLogined, location.pathname, navigate]);
+
   return (
     <div className="App">
       <div style={{ display: "flex", flexDirection: "row" }}>
