@@ -6,7 +6,9 @@
     rgba(61, 43, 86, 0.03),
     rgba(61, 43, 86, 0.06)
   );
-  min-height: 100vh;
+  box-sizing: border-box;
+  min-height: 100%;
+  width: auto;
   position: absolute;
   display: flex;
   flex-direction: column;
